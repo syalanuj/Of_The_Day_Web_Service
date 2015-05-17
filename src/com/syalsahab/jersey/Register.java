@@ -1,7 +1,7 @@
 package com.syalsahab.jersey;
 
 import java.sql.SQLException;
-import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
@@ -15,13 +15,13 @@ import javax.ws.rs.core.MediaType;
  * */
 public class Register {
 	// HTTP Get Method
-	@GET
+	@POST
 	// Path: http://localhost/<appln-folder-name>/register/doregister
 	@Path("/doregister") 
 	// Produces JSON as response
 	 @Produces(MediaType.APPLICATION_JSON)
 	  // Query parameters are parameters: http://localhost/<appln-folder-name>/register/doregister?name=pqrs&username=abc&password=xyz
-	 public String doLogin(@QueryParam("name")String name,
+	 public String doRegister(@QueryParam("name")String name,
 			 @QueryParam("username")String username,@QueryParam("password")String password){
 		String response="";
 		//System.out.println("Inside doLogin "+username+"  "+password);
